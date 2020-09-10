@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card list-car">
+      <h4 class="card-header">Lista de Valores</h4>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Valor Final</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of valores">
+                <td>{{v.data}}</td>
+                <td>{{v.valorFinal}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+  
+<div id="grafico"></div>
