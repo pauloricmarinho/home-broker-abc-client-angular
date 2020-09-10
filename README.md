@@ -1,6 +1,20 @@
-# ReaderchartsHttpClient
+# Home Broker ABC Angular Dashboad
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+Este Projeot foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+
+
+### Projeto de Bloco Frameworks & Servicos Java - MIT Engenharia de Software INFNET.
+
+	Gráficos MGLU3.SA - `http://localhost:4200/bolsavalores`
+	Relatório MGLU3.SA - `http://localhost:4200/reports`
+
+### Implementação Realizada por:
+
+- Danielle Patricio Braga De Souza Lima
+- Napoleão Henrique Sousa dos Santos
+- Paulo Ricardo Marinho Pontes
+
+
 
 ## Development server
 
