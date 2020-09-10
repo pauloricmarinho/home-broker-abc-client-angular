@@ -3,13 +3,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Valores } from '../models/valores';
+import { ValoresPlanilha } from '../models/ValoresPlanilha';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BolsaValoresService {
 
-  url = 'http://localhost:8080/home-broker-abc-api/valores-formatados'; // api rest fake
+  url = 'http://localhost:8080/home-broker-abc-api/valores'; // api rest fake
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -21,8 +22,8 @@ export class BolsaValoresService {
   }
 
   // Obtem Dados da API
-  getValores(): Observable<Valores[]> {
-    return this.httpClient.get<Valores[]>(this.url)
+  getValores(): Observable<ValoresPlanilha[]> {
+    return this.httpClient.get<ValoresPlanilha[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))

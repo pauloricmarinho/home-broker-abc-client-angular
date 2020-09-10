@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BolsaValoresService  } from '../../services/bolsa-valores.service';
-import { Valores } from '../../models/valores';
+import { ValoresPlanilha } from '../../models/ValoresPlanilha';
 
 // Dados do Grafico
 import * as CanvasJS from '../../../assets/canvasjs.min.js';
-import * as Charts from 'chart.js';
-import * as JQuery from 'jquery';
 //import * as CanvasJS  from  'canvasjs';
 //var JQuery = require('jquery');
 
@@ -19,8 +17,8 @@ import * as JQuery from 'jquery';
 })
 export class ClienteComponent implements OnInit {
 
-  val = {} as Valores;
-  valores: Valores[];
+  val = {} as ValoresPlanilha;
+  valores: ValoresPlanilha[];
   
   constructor(private service : BolsaValoresService) { }
 
@@ -56,13 +54,13 @@ export class ClienteComponent implements OnInit {
 		
   }
 
-  // Chama o serviço para obtém todos os carros
-  getValores() {
+  	// Chama o serviço para obtém todos os Valores
+  	getValores() {
     //this.service.getTeste();
     
-    this.service.getValores().subscribe((valores: Valores[]) => {      
-      this.valores = valores;
-    });
+	this.service.getValores().subscribe((valores: ValoresPlanilha[]) => {      
+		this.valores = valores;
+	});
 
     //console.log(this.service.getValoresBolsa())    
   
