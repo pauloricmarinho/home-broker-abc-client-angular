@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { BolsaValoresComponent } from './bolsa-valores/bolsa-valores.component';
-
+import { DataTablesModule } from 'angular-datatables';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { BolsaValoresComponent } from './bolsa-valores/bolsa-valores.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    DataTablesModule,
     FormsModule
   ],
   providers: [],

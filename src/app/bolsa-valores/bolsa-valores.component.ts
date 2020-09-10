@@ -18,13 +18,14 @@ export class BolsaValoresComponent implements OnInit {
   constructor(private service : BolsaValoresService) { }
 
   ngOnInit(){
-   // this.valores = this.getValores();
+   //this.valores = 
+   this.getValores();
 
 
   var dps1 = [], dps2= [];
   var stockChart = new CanvasJS.StockChart("chartContainer",{
     title:{
-      text:"Indicadores  Magazine Luiza - MGLU3.SA"
+      text:""
     },
     subtitles: [{
       text: " Gráficos SMA, EMA e MACD ",
@@ -118,13 +119,14 @@ export class BolsaValoresComponent implements OnInit {
         stockChart.render();
         return;
       }
+      var ema9 = null;
       var ema12 = calculateEMA(dps1, 12),
           ema26 = calculateEMA(dps1, 26),
           macd = [], ema9;
       for(var i = 0; i < ema12.length; i++) {
         macd.push({x: ema12[i].x, y: (ema12[i].y - ema26[i].y)});
       }
-      var ema9 = calculateEMA(macd, 9);
+      ema9 = calculateEMA(macd, 9);
       stockChart.addTo("charts", {height: 100, data: [{type: "line", name: "MACD", showInLegend: true, yValueFormatString: "#,###.00", dataPoints: macd}], legend: {horizontalAlign: "left"}, toolTip: {shared: true}});
       stockChart.charts[1].addTo("data", {type: "line", name: "Signal", showInLegend: true, yValueFormatString: "#,##0.00", dataPoints: ema9});
     //});
