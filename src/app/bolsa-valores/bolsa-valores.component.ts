@@ -110,7 +110,7 @@ export class BolsaValoresComponent implements OnInit {
         }
       }
       var ema = calculateEMA(dps1, 7);
-      stockChart.charts[0].addTo("data", {type: "line", name: "EMA", showInLegend: true, yValueFormatString: "$#,###.##", dataPoints: ema});
+      stockChart.charts[0].addTo("data", {type: "line", name: "EMA9", showInLegend: true, yValueFormatString: "$#,###.##", dataPoints: ema});
   
       
       // MACD
@@ -128,7 +128,9 @@ export class BolsaValoresComponent implements OnInit {
       }
       ema9 = calculateEMA(macd, 9);
       stockChart.addTo("charts", {height: 100, data: [{type: "line", name: "MACD", showInLegend: true, yValueFormatString: "#,###.00", dataPoints: macd}], legend: {horizontalAlign: "left"}, toolTip: {shared: true}});
-      stockChart.charts[1].addTo("data", {type: "line", name: "Signal", showInLegend: true, yValueFormatString: "#,##0.00", dataPoints: ema9});
+      stockChart.charts[1].addTo("data", {type: "line", name: "Sinal", showInLegend: true, yValueFormatString: "#,##0.00", dataPoints: ema9});            
+      stockChart.charts[0].addTo("data", {type: "line", name: "EMA12", showInLegend: true, yValueFormatString: "#,##0.00", dataPoints: ema12});
+      stockChart.charts[0].addTo("data", {type: "line", name: "EMA26", showInLegend: true, yValueFormatString: "#,##0.00", dataPoints: ema26});
     //});
   //});
 });
